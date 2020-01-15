@@ -1,0 +1,104 @@
+
+<% include ../views/partial/header %>
+
+
+<h3 id="naslov">People</h3>
+
+<a id="add" class="btn btn-primary" role="button" data-toggle="collapse" href="#addperson" aria-expanded="false" aria-controls="addperson">
+    Add person
+  </a>
+
+
+  <div class="collapse" id="addperson">
+    <div class="card card-body bg-light">
+
+<form method="POST" action="/person/add">
+    <h3>Add Person</h3>
+    <input type="text" name="name" placeholder="Name">
+    <input type="submit" value="Submit" class="btn btn-primary btn-sm">
+
+</form>
+    </div>
+  </div>
+
+
+
+<div class="row">
+    <% persons.forEach(function(person){ %>
+<div class="col-md-2">
+  <div class="card card-body bg-light"><i class="fa fa-user"></i>
+    <a href="/person/<%=person.id %>"><%= person.name %>  </a>
+   </div>
+</div>
+     <% }) %>
+
+</div>
+
+<a id="add" class="btn btn-primary" role="button" data-toggle="collapse" href="#connectfriends" aria-expanded="false" aria-controls="connectfriends">
+    Connect Friends
+  </a>
+
+
+
+
+
+<div class="collapse" id="connectfriends">
+    <div class="card card-body bg-light">
+
+        <h3>Connect friends</h3>
+
+
+        <form method="POST" action="/friends/add">
+        
+            <input type="text" name="name1" placeholder="First Person">
+            <input type="text" name="name2" placeholder="Second Person">
+            <input type="submit" value="Submit" class="btn btn-primary btn-sm">
+            
+            </form>
+
+
+    </div>
+  </div>
+
+
+
+
+<h3>Locations</h3>
+
+
+<a id="add" class="btn btn-primary" role="button" data-toggle="collapse" href="#addlocation" aria-expanded="false" aria-controls="addlocation">
+    Add Location
+  </a>
+
+
+  <div class="collapse" id="addlocation">
+    <div class="card card-body bg-light">
+
+        <h3>Add new Location</h3>
+
+        <form method="POST" action="/location/add">
+        
+        <input type="text" name="city" placeholder="City">
+        <input type="text" name="state" placeholder="State">
+        <input type="submit" value="Submit" class="btn btn-primary btn-sm">
+        
+        </form>
+
+
+    </div>
+  </div>
+
+<div class="row">
+    <% locations.forEach((location)=>{ %>
+<div class="col-md-2">
+<div class="card card-body bg-light"><i class="fa fa-map-marker" ></i>
+<%= location.city %>,<%= location.state %>
+</div>
+    
+</div>
+     <% }) %>
+
+</div>
+
+
+<% include ../views/partial/footer %>

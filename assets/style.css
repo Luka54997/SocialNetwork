@@ -1,0 +1,70 @@
+.navbar{
+    background-color: #fd048d;
+    }
+
+.navbar-brand{
+    color: #ffffff;
+}    
+
+.navbar-toggle {
+    display: none;
+}
+
+.collapse:not(.show) {
+    display: none;
+    flex-direction: column;
+}
+
+.navbar .container{
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.navbar-collapse {
+    align-items: flex-start;
+}
+
+.navbar-nav{
+    flex-direction: row;
+}
+
+#Home{
+    padding-right: 15px;
+    color:#ffffff;
+}
+
+.btn-primary{
+background-color:#d505ff ;
+border-color: #d505ff;
+}
+
+.card{
+    margin:15px;
+}
+
+.fa {
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+#add{
+    margin-top:15px;
+    margin-left: 15px;
+}
+
+h3{
+    margin-left: 15px;
+}
+
+.personDetails{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+#addBirthplace{
+    margin-top:50px;
+}

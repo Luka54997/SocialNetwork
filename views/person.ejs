@@ -1,0 +1,66 @@
+
+<% include ../views/partial/header %>
+
+
+
+<% if (!city) { %>
+<a id="add" class="btn btn-primary" role="button" data-toggle="collapse" href="#addbirthplace" aria-expanded="false" aria-controls="addbirthplace">
+    Add Birthplace
+  </a>
+  <% } %> 
+
+<div class="collapse" id="addbirthplace">
+    <div class="card card-body bg-light">
+
+        
+
+
+        <h3>Add Birthplace</h3>
+
+<form method="POST" action="/add">
+<input type="hidden" name="id" value="<%= id %>">
+<input type="hidden" name="name" value="<%= name %>">
+<input type="text" name="city" placeholder="City">
+<input type="text" name="state" placeholder="State">
+<input type="text" name="year" placeholder="Year">
+<input type="submit" value="Submit" class="btn btn-primary btn-sm">
+
+</form>
+
+    </div>
+  </div>
+
+    
+
+
+
+    
+
+        <h2><i class="fa fa-user"></i><%= name %></h2>
+        <% if (city) { %>
+        <h5><i class="fa fa-map-marker"></i>Birthplace: <%= city %> , <%= state %></h5>
+        <% } %> 
+
+
+
+
+
+
+<ul class="list-group">
+    <% friends.forEach(friend =>{ %>
+<li class="list-group-item">
+    <a href="/person/<%=friend.id %>"><%= friend.name %>  </a>
+</li>
+     <% }) %>
+
+</ul>
+
+
+
+
+
+
+
+
+
+<% include ../views/partial/footer %>
